@@ -29,8 +29,8 @@
 <br />
 <div id="header" align="center">
 <h1>
-  
  
+
 </h1>
   </a>
 
@@ -83,10 +83,10 @@
 ## 🎯About The Project
 <p>Project Description:<br>
 <p>The objective of this project is to create a machine learning model and implement it as a Google Cloud function to provide a recommendation system for apparel. The solution will take a text string that describes an article of clothing and return a JSON response with a ranked list of links to articles of clothing that are similar on other websites.</p>
-<p>Starting with relevant data such as product descriptions, photos, and customer reviews, a machine-learning learning, learning model is trained. The model will be trained to recognize the semantic context of the input text and to identify crucial characteristics of clothing items.</p>
+<p>Starting with relevant data such as product descriptions, and customer reviews, a machine-learning learning, learning model is trained. The model will be trained to recognize the semantic context of the input text and to identify crucial characteristics of clothing items.</p>
 <p>The model will be deployed as a function on the Google Cloud platform when it has been trained. The feature will act as an interface for receiving recommendations-related inquiries. The function will accept a text string as input that describes a piece of clothing, like "blue denim jeans" or "black leather jacket."</p>
 <p>The deployed machine learning model will be used by the function to process the input text once it receives a request in order to extract the key features and determine the user's intent. The model will then employ these qualities to browse databases or explore numerous clothes websites in search of comparable things.<p>
-<p>A JSON result from the function will offer a ranked list of links to the most pertinent and related clothing items. Based on the model's confidence in each item's resemblance to the input text, the ranking will be determined. The reply could include details like the product's name,  image, price, and a direct link to the store's website.</p>
+<p>A JSON result from the function will offer a ranked list of links to the most pertinent and related clothing items. Based on the model's confidence in each item's resemblance to the input text, the ranking will be determined. The reply is direct link to the store's website.</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -157,7 +157,7 @@ In my project, I employed various techniques to measure similarity between diffe
 ###🤖 Extracting Useful Features
  <p>In my project, I actively extracted useful features by implementing various techniques and methodologies. Firstly, I identified the specific requirements and objectives of my project, determining the key features that were crucial for achieving the desired outcomes.</p>
 
-<p>Using the BeautifulSoup scraping tool and ParseHub software, I employed data extraction techniques to retrieve the relevant information from the web pages. I carefully analyzed the HTML structure and identified the specific elements and attributes that contained the desired features. By leveraging the capabilities of these tools, I extracted text, images, links, and other data points that were important for my project.</p>
+<p>Using the BeautifulSoup scraping tool and ParseHub software, I employed data extraction techniques to retrieve the relevant information from the web pages. I carefully analyzed the HTML structure and identified the specific elements and attributes that contained the desired features. By leveraging the capabilities of these tools, I extracted text,links, and other data points that were important for my project.</p>
 
 <p>Furthermore, I applied data cleaning and preprocessing techniques to ensure the extracted features were in a usable format. This involved removing any irrelevant or noisy data, handling missing values, and normalizing the extracted information as needed. By performing these preprocessing steps, I ensured the quality and consistency of the features extracted.</p>
 
@@ -188,13 +188,27 @@ In my project, I employed various techniques to measure similarity between diffe
 
 <p>In my project, I developed a machine learning model capable of receiving a text description of a clothing item and generating a ranked list of links to similar items from various websites. This solution was implemented as a function deployed on Google Cloud, enabling it to accept a text string as input and provide JSON responses with ranked suggestions.</p>
 
-<p>To achieve this, I first gathered a large dataset consisting of clothing item descriptions and their corresponding links from different websites. With this dataset, I trained a machine learning model using a suitable algorithm, such as a deep learning model based on recurrent neural networks or a transformer model like BERT.</p>
+<p>To achieve this, I first gathered a large dataset consisting of clothing item descriptions and their corresponding links from different websites. With this dataset, I trained a machine learning model using a suitable algorithm</p>
+<h3>Approach-1</h3>
+<p> The first model is based on the tfidf ,where it lacks the semantic meaning of text</p>
+
+<h3>Approach-2</h3>
+<p>The process of latent semantic indexing involves several steps:</p>
+
+<p>1. Corpus Collection: A collection of documents is gathered, typically in the form of a text corpus. This corpus represents the dataset on which LSI will be applied.</p>
+
+<p>2. Term Frequency-Inverse Document Frequency (TF-IDF) Calculation: TF-IDF is computed for each term (word) in the document collection. TF-IDF quantifies the importance of a term within a specific document and across the entire corpus. It assigns higher weights to terms that appear frequently in a document but less frequently in the entire corpus.</p>
+
+<p>3. Singular Value Decomposition (SVD): SVD is applied to the TF-IDF matrix, which decomposes it into three matrices: U, Σ, and V. The U matrix represents the relationships between terms and concepts, the Σ matrix contains singular values that represent the importance of these concepts, and the V matrix represents the relationships between documents and concepts.</p>
+
+</p>4. Dimensionality Reduction: The dimensionality of the matrices resulting from SVD is reduced by keeping only the top-k singular values and their corresponding columns in U, Σ, and V. This step helps to remove noise and focus on the most significant semantic relationships.</p>
+
+<p>5. Query Processing: When a user submits a query, it is transformed into the semantic space by using the reduced matrices. This process allows the system to identify relevant documents that may not contain the exact query keywords but are semantically related.</p>
 
 <p>Using the trained model, I created a function that takes the input text describing a clothing item. The function then processes the text using natural language processing techniques to extract the relevant features and representations. This allows the model to understand the description and identify the key attributes of the clothing item.</p>
 
-<p>Once the input is processed, the model compares it to the dataset of clothing item descriptions it was trained on. It computes the similarity between the input description and each item in the dataset, ranking them based on their similarity scores. The higher the similarity score, the more relevant the item is considered to be.</p>
 
-<p>Upon ranking the items, the function generates JSON responses containing the ranked suggestions. Each response includes the link to the clothing item and additional information, such as the name, brand, price, and any other relevant details available. These responses are then returned to the user, providing them with a list of recommended similar items from different websites.</p>
+<p>Upon ranking the items, the function generates JSON responses containing the ranked suggestions. These responses are then returned to the user, providing them with a list of recommended similar items from different websites.</p>
 
 <p>By deploying this function on Google Cloud, it becomes readily accessible to users. They can make requests by providing a text description, and the function will promptly generate and deliver the ranked suggestions in the form of JSON responses. This solution allows users to effortlessly explore similar clothing items from various sources, assisting them in finding desired items and facilitating their online shopping experience.</p>
 
@@ -225,7 +239,7 @@ gcloud run deploy --image gcr.io/<ProjectName>/<AppName> --platform managed  --p
 <p>Your Name - Reesu Jagan</p> 
 <p>Email-Id - reesujagan42@gmail.com</p>
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [clothing similiarity search](https://github.com/codejay12/clothing-similarity-search)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
